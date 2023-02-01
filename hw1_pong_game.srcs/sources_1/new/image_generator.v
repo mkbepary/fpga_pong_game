@@ -54,14 +54,14 @@ module image_generator (
     // square rom boundaries
     parameter BALL_SIZE = 16; 
      // positive or negative ball velocity
-    parameter BALL_VELOCITY_POS = 10;
-    parameter BALL_VELOCITY_NEG = -10;
+    parameter BALL_VELOCITY_POS = 2;
+    parameter BALL_VELOCITY_NEG = -2;
+    
+    // score board boundaries
         
      // create 60Hz refresh tick
     wire refresh_tick;
-    assign refresh_tick = ((column == Y_MAX) && (row == 0)) ? 1 : 0; // start of vsync(vertical retrace)
-    
-
+    assign refresh_tick = ((column == 0) && (row == 0)) ? 1 : 0; // start of vsync(vertical retrace)
     
     // paddle vertical boundary signals
     //parameter y_pad_t = 500;
@@ -70,7 +70,8 @@ module image_generator (
 	wire pad_on;
 
     // register to track top boundary and buffer
-    reg [31:0] y_pad_reg_l, y_pad_next_l, y_pad_reg_r, y_pad_next_r;
+    reg [31:0] y_pad_reg_l, y_pad_reg_r;
+    reg [31:0] y_pad_next_l, y_pad_next_r;
 
     
     
@@ -117,15 +118,23 @@ module image_generator (
 	    // Paddle Control
     always @( *) begin
         //if(refresh_tick)
-            if(up_L & (y_pad_t_l > PAD_VELOCITY))
+            if(up_L & (y_pad_t_l >= PAD_VELOCITY))
                 y_pad_next_l = y_pad_reg_l - PAD_VELOCITY;  // move up - Left
+            else if(up_L & (y_pad_t_l < PAD_VELOCITY))
+                y_pad_next_l = 0;  // move up - Left
             else if(down_L & (y_pad_b_l <= (Y_MAX - PAD_VELOCITY)))
                 y_pad_next_l = y_pad_reg_l + PAD_VELOCITY;  // move down - Left
+            else if(down_L & (y_pad_b_l > (Y_MAX - PAD_VELOCITY)))
+                y_pad_next_l = Y_MAX-PAD_HEIGHT;  // move down - Left
                 
-            else if(up_R & (y_pad_t_r > PAD_VELOCITY))
+            else if(up_R & (y_pad_t_r >= PAD_VELOCITY))
                 y_pad_next_r = y_pad_reg_r - PAD_VELOCITY;  // move up - Right
+            else if(up_R & (y_pad_t_r < PAD_VELOCITY))
+                y_pad_next_r = 0;  // move up - Right
             else if(down_R & (y_pad_b_r <= (Y_MAX - PAD_VELOCITY)))
                 y_pad_next_r = y_pad_reg_r + PAD_VELOCITY;  // move down - Right
+            else if(down_R & (y_pad_b_r > (Y_MAX - PAD_VELOCITY)))
+                y_pad_next_r = Y_MAX-PAD_HEIGHT;  // move down - Right
         else begin
             y_pad_next_l = y_pad_reg_l;     // no move
             y_pad_next_r = y_pad_reg_r;     // no move              
@@ -154,7 +163,7 @@ module image_generator (
         endcase    
        
         // OBJECT STATUS SIGNALS
-    wire wall_on, pad_on_L, pad_on_R, sq_ball_on, ball_on;
+    wire pad_on_L, pad_on_R, sq_ball_on, ball_on, score_board_on;
 	
 	
 	    // paddle 
@@ -184,11 +193,13 @@ module image_generator (
     // pixel within round ball
     assign ball_on = sq_ball_on & rom_bit;      // within square boundaries AND rom data bit == 1
     // new ball position
-    assign x_ball_next = (v_sync) ? x_ball_reg : (x_delta_reg + x_ball_reg);
-    assign y_ball_next = (v_sync) ? y_ball_reg : (y_delta_reg + y_ball_reg);
+    assign x_ball_next = (refresh_tick) ? x_ball_reg + x_delta_reg :  x_ball_reg;
+    assign y_ball_next = (refresh_tick) ? y_ball_reg + y_delta_reg : y_ball_reg;
 
         // change ball direction after collision
     always @* begin
+        x_delta_next = x_delta_reg;
+        y_delta_next = x_delta_reg;
         if(y_ball_t < 1)                                            // collide with top
             y_delta_next = BALL_VELOCITY_POS;                       // move down
         else if(y_ball_b > Y_MAX)                                   // collide with bottom
@@ -198,11 +209,19 @@ module image_generator (
         else if((X_PAD_L2 <= x_ball_r) && (x_ball_r <= X_PAD_R2) &&
                 (y_pad_t_r <= y_ball_b) && (y_ball_t <= y_pad_b_r))     // collide with paddle
             x_delta_next = BALL_VELOCITY_NEG;                       // move left
-        else begin
+        /*else begin
             x_delta_next = x_delta_reg;
             y_delta_next = x_delta_reg;
-        end
+        end*/
     end   
+    
+    
+    // score module
+        // pixel within rom square boundaries
+    assign score_board_on = ((X_MAX/2-100) <= row) && (row <= (X_MAX/2+100)) &&
+                        ((X_PAD_L1) <= column) && (column <= X_PAD_L1+100);
+                        
+                        
 
 	
 	// rgb multiplexing circuit
