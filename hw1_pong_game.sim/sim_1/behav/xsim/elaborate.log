@@ -1,0 +1,8 @@
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto ef451e26e94a4453a227c1f2319bb626 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot top_behav xil_defaultlib.top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-3355] formal port 'column' of type 'integer' does not match with actual type 'wire' [E:/Kawser_Analysis/SoCDesign/hw1_pong_game/hw1_pong_game.srcs/sources_1/new/top.v:46]
+ERROR: [VRFC 10-3355] formal port 'row' of type 'integer' does not match with actual type 'wire' [E:/Kawser_Analysis/SoCDesign/hw1_pong_game/hw1_pong_game.srcs/sources_1/new/top.v:47]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

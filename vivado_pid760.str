@@ -1,0 +1,230 @@
+/*
+
+Xilinx Vivado v2022.1 (64-bit) [Major: 2022, Minor: 1]
+SW Build: 3526262 on Mon Apr 18 15:48:16 MDT 2022
+IP Build: 3524634 on Mon Apr 18 20:55:01 MDT 2022
+
+Process ID (PID): 760
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Sun Jan 22 11:02:00 EST 2023
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 2560x1440
+Screen resolution (DPI): 100
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.11 64-bit
+Java home: 	D:/Vivado/2022.1/tps/win64/jre11.0.11_9
+Java executable: 	D:/Vivado/2022.1/tps/win64/jre11.0.11_9/bin/java.exe
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.d3d=false, -Dsun.awt.nopixfmt=true, -Dsun.java2d.dpiaware=true, -Dsun.java2d.uiScale.enabled=false, -Xverify:none, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, --add-opens=java.desktop/com.sun.awt=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, -XX:NewSize=60m, -XX:MaxNewSize=60m, -Xms256m, -Xmx3072m, -Xss5m]
+Java initial memory (-Xms): 	256 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	kawse
+User home directory: C:/Users/kawse
+User working directory: C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: D:/Vivado
+HDI_APPROOT: D:/Vivado/2022.1
+RDI_DATADIR: D:/Vivado/2022.1/data
+RDI_BINDIR: D:/Vivado/2022.1/bin
+
+Vivado preferences file: C:/Users/kawse/AppData/Roaming/Xilinx/Vivado/2022.1/vivado.xml
+Vivado preferences directory: C:/Users/kawse/AppData/Roaming/Xilinx/Vivado/2022.1/
+Vivado layouts directory: C:/Users/kawse/AppData/Roaming/Xilinx/Vivado/2022.1/data/layouts
+PlanAhead jar file: 	D:/Vivado/2022.1/lib/classes/planAhead.jar
+Vivado log file: 	C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/vivado.log
+Vivado journal file: 	C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/vivado.jou
+Engine tmp dir: 	C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/.Xil/Vivado-760-HPLaptopKawser
+
+Xilinx Environment Variables
+----------------------------
+XILINX: D:/Vivado/2022.1/ids_lite/ISE
+XILINX_DSP: D:/Vivado/2022.1/ids_lite/ISE
+XILINX_HLS: D:/Vitis_HLS/2022.1
+XILINX_PLANAHEAD: D:/Vivado/2022.1
+XILINX_VIVADO: D:/Vivado/2022.1
+XILINX_VIVADO_HLS: D:/Vivado/2022.1
+
+
+GUI allocated memory:	256 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,295 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: C:\Users\kawse\OneDrive - University of Florida\Academic\2023 Spring\EEL5930-SoC-Design\Homeworks\HW1\hw1_pong_game\hw1_pong_game.xpr. Version: Vivado v2022.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project {C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.xpr} 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game' 
+// TclEventType: FLOW_ADDED
+// HMemoryUtils.trashcanNow. Engine heap size: 1,295 MB. GUI used memory: 65 MB. Current time: 1/22/23, 11:02:01 AM EST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project {C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.xpr} 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game' 
+// Tcl Message: INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.gen/sources_1'. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 114 MB (+117053kb) [00:00:26]
+// [Engine Memory]: 1,295 MB (+1206123kb) [00:00:26]
+// WARNING: HEventQueue.dispatchEvent() is taking  5172 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/2022.1/data/ip'. 
+// [GUI Memory]: 123 MB (+3507kb) [00:00:30]
+// Project name: hw1_pong_game; location: C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game; part: xc7a100tcsg324-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:31 ; elapsed = 00:00:17 . Memory (MB): peak = 1560.336 ; gain = 0.000 
+dismissDialog("Open Project"); // bA
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 23 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
+dismissDialog("Critical Messages"); // a
+// PAPropertyPanels.initPanels (top.v) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v)]", 2, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v)]", 2, true, false, false, false, false, true); // D - Double Click - Node
+// Elapsed time: 13 seconds
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a
+dismissDialog("Opening Editor"); // bA
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // D
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a
+selectButton(RDIResource.HJFileChooserHelpers_JUMP_TO_DOWNLOADS_DIRECTORY, (String) null); // a
+selectButton(RDIResource.HJFileChooserHelpers_JUMP_TO_CURRENT_WORKING_DIRECTORY, (String) null); // a
+dismissFileChooser();
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a
+selectButton(RDIResource.HJFileChooserHelpers_JUMP_TO_CURRENT_WORKING_DIRECTORY, (String) null); // a
+// Elapsed time: 10 seconds
+String[] filenames31467 = {"C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.srcs/sources_1/new/hw_image_generator.vhd", "C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.srcs/sources_1/new/vga_controller.vhd"};
+setFileChooser(filenames31467);
+selectButton("FINISH", "Finish"); // JButton
+// 'g' command handler elapsed time: 32 seconds
+dismissDialog("Add Sources"); // c
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {{C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.srcs/sources_1/new/vga_controller.vhd} {C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.srcs/sources_1/new/hw_image_generator.vhd}} 
+// [GUI Memory]: 136 MB (+7486kb) [00:01:46]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 946 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // n
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: RUN_MODIFY
+dismissDialog("Run Synthesis"); // A
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+selectComboBox(PAResourceItoN.NumJobsChooser_NUMBER_OF_JOBS, "8", 7); // e
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Launch Runs"); // f
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 8 
+// Tcl Message: [Sun Jan 22 11:19:20 2023] Launched synth_1... Run output will be captured here: C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 6 seconds
+dismissDialog("Starting Design Runs"); // bA
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 67 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Synthesis Completed"); // ag
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 302 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // n
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Launch Runs"); // cZ
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Sun Jan 22 11:25:33 2023] Launched synth_1... Run output will be captured here: C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.runs/synth_1/runme.log [Sun Jan 22 11:25:33 2023] Launched impl_1... Run output will be captured here: C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 23 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // ag
