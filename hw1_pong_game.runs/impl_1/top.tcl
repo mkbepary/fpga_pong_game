@@ -125,7 +125,8 @@ set rc [catch {
   set_param chipscope.maxJobs 2
   set_param xicom.use_bs_reader 1
 OPTRACE "create in-memory project" START { }
-  create_project -in_memory -part xc7a100tcsg324-1
+  create_project -in_memory -part xc7a35tcpg236-1
+  set_property board_part digilentinc.com:basys3:part0:1.2 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
@@ -138,11 +139,11 @@ OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet {{C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.runs/synth_1/top.dcp}}
 OPTRACE "read constraints: implementation" START { }
-  read_xdc {{C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.srcs/constrs_1/new/Nexys-A7-Master.xdc}}
+  read_xdc {{C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.srcs/constrs_1/new/Basys-3-Master.xdc}}
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }
-  link_design -top top -part xc7a100tcsg324-1 
+  link_design -top top -part xc7a35tcpg236-1 
 OPTRACE "link_design" END { }
 OPTRACE "gray box cells" START { }
 OPTRACE "gray box cells" END { }

@@ -24,6 +24,7 @@
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 ENTITY vga_controller IS
   GENERIC(
@@ -43,8 +44,8 @@ ENTITY vga_controller IS
     h_sync    : OUT  STD_LOGIC;  --horiztonal sync pulse
     v_sync    : OUT  STD_LOGIC;  --vertical sync pulse
     disp_ena  : OUT  STD_LOGIC;  --display enable ('1' = display time, '0' = blanking time)
-    column    : OUT  INTEGER;    --horizontal pixel coordinate
-    row       : OUT  INTEGER;    --vertical pixel coordinate
+    column    : OUT  STD_LOGIC_VECTOR (31 downto 0);    --horizontal pixel coordinate
+    row       : OUT  STD_LOGIC_VECTOR (31 downto 0);    --vertical pixel coordinate
     n_blank   : OUT  STD_LOGIC;  --direct blacking output to DAC
     n_sync    : OUT  STD_LOGIC); --sync-on-green output to DAC
 END vga_controller;
@@ -68,8 +69,8 @@ BEGIN
       h_sync <= NOT h_pol;      --deassert horizontal sync
       v_sync <= NOT v_pol;      --deassert vertical sync
       disp_ena <= '0';          --disable display
-      column <= 0;              --reset column pixel coordinate
-      row <= 0;                 --reset row pixel coordinate
+      column <= (others => '0');              --reset column pixel coordinate
+      row <= (others => '0');                 --reset row pixel coordinate
       
     ELSIF(pixel_clk'EVENT AND pixel_clk = '1') THEN
 
@@ -101,10 +102,10 @@ BEGIN
       
       --set pixel coordinates
       IF(h_count < h_pixels) THEN  --horiztonal display time
-        column <= h_count;           --set horiztonal pixel coordinate
+        column <= std_logic_vector(to_unsigned(h_count, column'length));           --set horiztonal pixel coordinate
       END IF;
       IF(v_count < v_pixels) THEN  --vertical display time
-        row <= v_count;              --set vertical pixel coordinate
+        row <= std_logic_vector(to_unsigned(v_count, column'length));              --set vertical pixel coordinate
       END IF;
 
       --set display enable output

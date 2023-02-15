@@ -1,11 +1,11 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date             : Wed Feb  1 16:48:51 2023
+| Date             : Fri Feb 10 16:55:49 2023
 | Host             : HPLaptopKawser running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
-| Device           : xc7a100tcsg324-1
+| Device           : xc7a35tcpg236-1
 | Design State     : routed
 | Grade            : commercial
 | Process          : typical
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.102        |
+| Total On-Chip Power (W)  | 0.079        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.005        |
-| Device Static (W)        | 0.097        |
-| Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 84.5         |
-| Junction Temperature (C) | 25.5         |
+| Dynamic (W)              | 0.007        |
+| Device Static (W)        | 0.072        |
+| Effective TJA (C/W)      | 5.0          |
+| Max Ambient (C)          | 84.6         |
+| Junction Temperature (C) | 25.4         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,16 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1110 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      498 |     63400 |            0.79 |
-|   CARRY4       |    <0.001 |      128 |     15850 |            0.81 |
-|   Register     |    <0.001 |      313 |    126800 |            0.25 |
+| Slice Logic    |    <0.001 |     1341 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      618 |     20800 |            2.97 |
+|   CARRY4       |    <0.001 |      136 |      8150 |            1.67 |
+|   Register     |    <0.001 |      350 |     41600 |            0.84 |
 |   BUFG         |    <0.001 |        2 |        32 |            6.25 |
-|   Others       |     0.000 |       21 |       --- |             --- |
-| Signals        |    <0.001 |      835 |       --- |             --- |
-| I/O            |     0.002 |       21 |       210 |           10.00 |
-| Static Power   |     0.097 |          |           |                 |
-| Total          |     0.102 |          |           |                 |
+|   Others       |     0.000 |       35 |       --- |             --- |
+| Signals        |    <0.001 |      999 |       --- |             --- |
+| Block RAM      |     0.002 |      0.5 |        50 |            1.00 |
+| I/O            |     0.002 |       21 |       106 |           19.81 |
+| Static Power   |     0.072 |          |           |                 |
+| Total          |     0.079 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.019 |       0.004 |      0.015 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.015 |       0.005 |      0.010 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -112,7 +113,7 @@ Table of Contents
 
 +-----------------------+--------------------------+
 | Ambient Temp (C)      | 25.0                     |
-| ThetaJA (C/W)         | 4.6                      |
+| ThetaJA (C/W)         | 5.0                      |
 | Airflow (LFM)         | 250                      |
 | Heat Sink             | medium (Medium Profile)  |
 | ThetaSA (C/W)         | 4.6                      |
@@ -138,11 +139,12 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+-----------+-----------+
-| Name      | Power (W) |
-+-----------+-----------+
-| top       |     0.005 |
-|   im_gen0 |     0.001 |
-+-----------+-----------+
++-----------------+-----------+
+| Name            | Power (W) |
++-----------------+-----------+
+| top             |     0.007 |
+|   im_gen0       |     0.003 |
+|     scoreboard1 |     0.002 |
++-----------------+-----------+
 
 

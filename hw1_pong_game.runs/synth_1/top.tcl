@@ -73,7 +73,7 @@ OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
-create_project -in_memory -part xc7a100tcsg324-1
+create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -82,12 +82,14 @@ set_property webtalk.parent_dir {C:/Users/kawse/OneDrive - University of Florida
 set_property parent.project_path {C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.xpr} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
+set_property board_part digilentinc.com:basys3:part0:1.2 [current_project]
 set_property ip_output_repo {c:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   {C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.srcs/sources_1/new/image_generator.v}
+  {C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.srcs/sources_1/new/num_rom.v}
   {C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.srcs/sources_1/new/push_button_delay.v}
   {C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.srcs/sources_1/new/top.v}
 }
@@ -101,14 +103,14 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.srcs/constrs_1/new/Nexys-A7-Master.xdc}}
-set_property used_in_implementation false [get_files {{C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.srcs/constrs_1/new/Nexys-A7-Master.xdc}}]
+read_xdc {{C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.srcs/constrs_1/new/Basys-3-Master.xdc}}
+set_property used_in_implementation false [get_files {{C:/Users/kawse/OneDrive - University of Florida/Academic/2023 Spring/EEL5930-SoC-Design/Homeworks/HW1/hw1_pong_game/hw1_pong_game.srcs/constrs_1/new/Basys-3-Master.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top top -part xc7a100tcsg324-1
+synth_design -top top -part xc7a35tcpg236-1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"

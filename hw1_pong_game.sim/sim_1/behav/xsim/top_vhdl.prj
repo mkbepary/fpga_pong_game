@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"C:/Users/Md Kawser Bepary/Downloads/hw_image_generator.vhd" \
-"C:/Users/Md Kawser Bepary/Downloads/vga_controller.vhd" \
-
-# Do not sort compile order
-nosort

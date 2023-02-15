@@ -1,11 +1,11 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Wed Feb  1 16:46:38 2023
+| Date         : Fri Feb 10 16:54:50 2023
 | Host         : HPLaptopKawser running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
-| Device       : xc7a100t
+| Device       : xc7a35t
 ------------------------------------------------------------------------------------
 
 Control Set Information
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    16 |
-|    Minimum number of control sets                        |    16 |
+| Total control sets                                       |    24 |
+|    Minimum number of control sets                        |    24 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    55 |
+| Unused register locations in slices containing registers |    82 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    16 |
-| >= 0 to < 4        |     4 |
-| >= 4 to < 6        |     0 |
-| >= 6 to < 8        |     0 |
-| >= 8 to < 10       |     0 |
+| Total control sets |    24 |
+| >= 0 to < 4        |     6 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |     1 |
 | >= 10 to < 12      |     2 |
-| >= 12 to < 14      |     1 |
+| >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     9 |
+| >= 16              |    11 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,37 +58,45 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              48 |           29 |
-| No           | No                    | Yes                    |              90 |           37 |
-| No           | Yes                   | No                     |              92 |           24 |
-| Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |              83 |           25 |
-| Yes          | Yes                   | No                     |               0 |            0 |
+| No           | No                    | No                     |              81 |           39 |
+| No           | No                    | Yes                    |              24 |            8 |
+| No           | Yes                   | No                     |             154 |           49 |
+| Yes          | No                    | No                     |               9 |            3 |
+| Yes          | No                    | Yes                    |              21 |            9 |
+| Yes          | Yes                   | No                     |              61 |           18 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+---------------------------------+------------------------------+---------------------------------+------------------+----------------+--------------+
-|           Clock Signal          |         Enable Signal        |         Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
-+---------------------------------+------------------------------+---------------------------------+------------------+----------------+--------------+
-|  im_gen0/y_pad_next_l_reg[6]/G0 |                              |                                 |                1 |              1 |         1.00 |
-|  im_gen0/y_pad_next_l_reg[7]/G0 |                              |                                 |                1 |              1 |         1.00 |
-|  im_gen0/y_pad_next_l_reg[8]/G0 |                              |                                 |                1 |              1 |         1.00 |
-|  im_gen0/y_pad_next_l_reg[9]/G0 |                              |                                 |                1 |              1 |         1.00 |
-|  pixel_clk_IBUF_BUFG            | vga_cont0/row[9]_i_1_n_1     | vga_cont0/h_sync_i_2_n_1        |                5 |             10 |         2.00 |
-|  pixel_clk_IBUF_BUFG            | vga_cont0/column[10]_i_1_n_1 | vga_cont0/h_sync_i_2_n_1        |                3 |             11 |         3.67 |
-|  pixel_clk_IBUF_BUFG            |                              |                                 |                8 |             12 |         1.50 |
-|  pixel_clk_IBUF_BUFG            |                              | pb_down_L/PB_cnt[0]_i_1__1_n_1  |                4 |             16 |         4.00 |
-|  pixel_clk_IBUF_BUFG            |                              | pb_down_R/PB_cnt[0]_i_1__2_n_1  |                4 |             16 |         4.00 |
-|  pixel_clk_IBUF_BUFG            |                              | pb_up_L/PB_cnt[0]_i_1__0_n_1    |                4 |             16 |         4.00 |
-|  pixel_clk_IBUF_BUFG            |                              | pb_up_R/PB_idle                 |                4 |             16 |         4.00 |
-|  pixel_clk_IBUF_BUFG            |                              | vga_cont0/h_sync_i_2_n_1        |               10 |             24 |         2.40 |
-|  n_0_39_BUFG                    |                              | pb_up_L/AR[1]                   |                8 |             28 |         3.50 |
-|  y_pad_next_r__0                |                              |                                 |               17 |             32 |         1.88 |
-|  pixel_clk_IBUF_BUFG            | vga_cont0/refresh_tick       | im_gen0/y_delta_reg[30]_i_2_n_1 |               17 |             62 |         3.65 |
-|  pixel_clk_IBUF_BUFG            |                              | im_gen0/y_delta_reg[30]_i_2_n_1 |               27 |             66 |         2.44 |
-+---------------------------------+------------------------------+---------------------------------+------------------+----------------+--------------+
++---------------------------------------------+--------------------------------+--------------------------------+------------------+----------------+--------------+
+|                 Clock Signal                |          Enable Signal         |        Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
++---------------------------------------------+--------------------------------+--------------------------------+------------------+----------------+--------------+
+|  im_gen0/y_pad_next_l_reg[3]/G0             |                                |                                |                1 |              1 |         1.00 |
+|  im_gen0/y_pad_next_l_reg[6]/G0             |                                |                                |                1 |              1 |         1.00 |
+|  im_gen0/y_pad_next_l_reg[7]/G0             |                                |                                |                1 |              1 |         1.00 |
+|  im_gen0/y_pad_next_l_reg[5]/G0             |                                |                                |                1 |              1 |         1.00 |
+|  im_gen0/y_pad_next_l_reg[4]/G0             |                                |                                |                1 |              1 |         1.00 |
+|  im_gen0/y_pad_next_l_reg[9]/G0             |                                |                                |                1 |              1 |         1.00 |
+|  pixel_clk_IBUF_BUFG                        | im_gen0/score1_reg[3]_i_2_n_1  | im_gen0/score1_reg[3]_i_1_n_1  |                1 |              4 |         4.00 |
+|  pixel_clk_IBUF_BUFG                        | im_gen0/score2_reg[3]_i_1_n_1  | im_gen0/score1_reg[3]_i_1_n_1  |                1 |              4 |         4.00 |
+|  im_gen0/scoreboard1/data_reg[7]_i_1_n_1    |                                |                                |                2 |              7 |         3.50 |
+|  im_gen0/scoreboard2/data_reg[7]_i_1__0_n_1 |                                |                                |                2 |              7 |         3.50 |
+|  pixel_clk_IBUF_BUFG                        | im_gen0/x_ball_reg[10]_i_1_n_1 |                                |                3 |              9 |         3.00 |
+|  pixel_clk_IBUF_BUFG                        | vga_cont0/row[9]_i_1_n_1       | vga_cont0/h_sync_i_2_n_1       |                5 |             10 |         2.00 |
+|  pixel_clk_IBUF_BUFG                        | vga_cont0/column[10]_i_1_n_1   | vga_cont0/h_sync_i_2_n_1       |                4 |             11 |         2.75 |
+|  pixel_clk_IBUF_BUFG                        |                                | pb_up_L/PB_cnt[0]_i_1__0_n_1   |                4 |             16 |         4.00 |
+|  pixel_clk_IBUF_BUFG                        |                                | pb_up_R/PB_idle                |                4 |             16 |         4.00 |
+|  pixel_clk_IBUF_BUFG                        |                                | pb_down_L/PB_cnt[0]_i_1__1_n_1 |                4 |             16 |         4.00 |
+|  pixel_clk_IBUF_BUFG                        |                                | pb_down_R/PB_cnt[0]_i_1__2_n_1 |                4 |             16 |         4.00 |
+|  pixel_clk_IBUF_BUFG                        | im_gen0/x_ball_reg[10]_i_1_n_1 | im_gen0/x_ball_reg[31]_i_1_n_1 |                7 |             22 |         3.14 |
+|  pixel_clk_IBUF_BUFG                        |                                | vga_cont0/h_sync_i_2_n_1       |                8 |             24 |         3.00 |
+|  n_0_873_BUFG                               |                                | pb_up_L/AR[1]                  |                7 |             26 |         3.71 |
+|  pixel_clk_IBUF_BUFG                        |                                |                                |               12 |             29 |         2.42 |
+|  pixel_clk_IBUF_BUFG                        | vga_cont0/column_reg[7]_3      | im_gen0/y_ball_reg             |                9 |             31 |         3.44 |
+|  y_pad_next_r__0                            |                                |                                |               17 |             32 |         1.88 |
+|  pixel_clk_IBUF_BUFG                        |                                | im_gen0/y_ball_reg             |               26 |             64 |         2.46 |
++---------------------------------------------+--------------------------------+--------------------------------+------------------+----------------+--------------+
 
 

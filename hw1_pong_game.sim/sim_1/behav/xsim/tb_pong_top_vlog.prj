@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../hw1_pong_game.srcs/sources_1/new/image_generator.v" \
+"../../../../hw1_pong_game.srcs/sources_1/new/num_rom.v" \
+"../../../../hw1_pong_game.srcs/sources_1/new/push_button_delay.v" \
+"../../../../hw1_pong_game.srcs/sources_1/new/top.v" \
+"../../../../hw1_pong_game.srcs/sim_1/new/tb_pong_top.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

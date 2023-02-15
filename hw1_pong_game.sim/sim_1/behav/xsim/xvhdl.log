@@ -1,4 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Md Kawser Bepary/Downloads/hw_image_generator.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'hw_image_generator'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Md Kawser Bepary/Downloads/vga_controller.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'vga_controller'

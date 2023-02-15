@@ -31,6 +31,7 @@ module num_rom
     input wire [10:0] addr, //[10:4] for ASCII char code, [3:0] for choosing what row to read on a given character code  
     output reg [7:0] data
    );
+   (* rom_style = "block" *)	// Infer BRAM
    
    // signal declaration
    reg [10:0] addr_reg; 
