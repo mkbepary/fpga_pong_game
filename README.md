@@ -1,4 +1,4 @@
-#### Pong Game Implementation on Basys 3 FPGA
+## Pong Game Implementation on Basys 3 FPGA
 
 This repository contains the hardware implementation of a two player pong game. Two paddles are moved up and down using the push buttons. The triangular ball
 moves in random direction and the players tries to hit the ball with their ball. Once the ball is missed, the opponent gets a point and his scoreboard is increased. 
